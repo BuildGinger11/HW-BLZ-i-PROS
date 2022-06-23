@@ -1,4 +1,7 @@
 #pragma once
 
-void Flywheel_Control (void*);
-void flywheel (int power);
+void set_flywheel(int input);
+int get_flywheel();
+
+void Flywheel_Control(void *);
+void flywheel(int power);
