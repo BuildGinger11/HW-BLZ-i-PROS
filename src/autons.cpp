@@ -1,20 +1,16 @@
 #include "main.h"
 
-
 /////
 // For instalattion, upgrading, documentations and tutorials, check out website!
 // https://ez-robotics.github.io/EZ-Template/
 /////
 
-
-const int DRIVE_SPEED = 110; // This is 110/127 (around 87% of max speed).  We don't suggest making this 127.
-                             // If this is 127 and the robot tries to heading correct, it's only correcting by
-                             // making one side slower.  When this is 87%, it's correcting by making one side
-                             // faster and one side slower, giving better heading correction.
-const int TURN_SPEED  = 90;
+const int DRIVE_SPEED = 110;  // This is 110/127 (around 87% of max speed).  We don't suggest making this 127.
+                              // If this is 127 and the robot tries to heading correct, it's only correcting by
+                              // making one side slower.  When this is 87%, it's correcting by making one side
+                              // faster and one side slower, giving better heading correction.
+const int TURN_SPEED = 90;
 const int SWING_SPEED = 90;
-
-
 
 ///
 // Constants
@@ -65,62 +61,43 @@ void modified_exit_condition() {
   chassis.set_exit_condition(chassis.drive_exit, 80, 50, 300, 150, 500, 500);
 }
 
-
-
-void testerAuton()
-{
+void testerAuton() {
   TallMogoClaw();
 }
 
-
-
-void wingGrab ()
-{
+void wingGrab() {
 }
 
-void wingTurn ()
-{
+void wingTurn() {
 }
 
-void wingAWPFull ()
-{
+void wingAWPFull() {
 }
 
-void bamboozlerRight ()
-{
+void bamboozlerRight() {
 }
 
-
-void fullAWPTall ()
-{
+void fullAWPTall() {
 }
 
-void TallMogoWing()
-{
+void TallMogoWing() {
 }
 // -preWing Collection----------------------------------------------------
 
-
-void neutRushAndAllyLeft ()
-{
+void neutRushAndAllyLeft() {
 }
 
-
-void wingAndSwingLeftNeutAndTall () // need test
+void wingAndSwingLeftNeutAndTall()  // need test
 {
 }
 
 // -preWing Collection----------------------------------------------------
 
-void noKickStand ()
-{
+void noKickStand() {
 }
 
-
-void semiGamerRight()
-{
+void semiGamerRight() {
 }
 
-void semiGamerLeft ()
-{
+void semiGamerLeft() {
 }

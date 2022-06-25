@@ -12,7 +12,6 @@ int FinalDegrees = 0;
 void Index_Control(void *) {
   int target = 160;
   while (1) {
-
     if (master.get_digital_new_press(DIGITAL_R1) && get_flywheel() != 0) {
       printf("inmaster \n");
       Indexer.move_absolute(target, 200);
