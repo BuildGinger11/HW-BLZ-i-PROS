@@ -30,11 +30,11 @@
             "-funwind-tables",
             "--std=gnu++17",
             "-o",
-            "bin/autons.cpp.o",
-            "src\\autons.cpp"
+            "bin/Indexer.cpp.o",
+            "src\\Indexer.cpp"
         ],
-        "directory": "C:\\Users\\union\\Documents\\HW-Everybot",
-        "file": "src\\autons.cpp"
+        "directory": "C:\\Users\\PC\\Documents\\GitHub\\HW-Everybot\\HW-Everybot",
+        "file": "src\\Indexer.cpp"
     },
     {
         "arguments": [
@@ -67,11 +67,11 @@
             "-funwind-tables",
             "--std=gnu++17",
             "-o",
-            "bin/Indexer.cpp.o",
-            "src\\Indexer.cpp"
+            "bin/main.cpp.o",
+            "src\\main.cpp"
         ],
-        "directory": "C:\\Users\\union\\Documents\\HW-Everybot",
-        "file": "src\\Indexer.cpp"
+        "directory": "C:\\Users\\PC\\Documents\\GitHub\\HW-Everybot\\HW-Everybot",
+        "file": "src\\main.cpp"
     },
     {
         "arguments": [
@@ -107,7 +107,7 @@
             "bin/Flywheel.cpp.o",
             "src\\Flywheel.cpp"
         ],
-        "directory": "C:\\Users\\union\\Documents\\HW-Everybot",
+        "directory": "C:\\Users\\PC\\Documents\\GitHub\\HW-Everybot\\HW-Everybot",
         "file": "src\\Flywheel.cpp"
     },
     {
@@ -144,7 +144,7 @@
             "bin/Intakes.cpp.o",
             "src\\Intakes.cpp"
         ],
-        "directory": "C:\\Users\\union\\Documents\\HW-Everybot",
+        "directory": "C:\\Users\\PC\\Documents\\GitHub\\HW-Everybot\\HW-Everybot",
         "file": "src\\Intakes.cpp"
     },
     {
@@ -178,10 +178,10 @@
             "-funwind-tables",
             "--std=gnu++17",
             "-o",
-            "bin/main.cpp.o",
-            "src\\main.cpp"
+            "bin/autons.cpp.o",
+            "src\\autons.cpp"
         ],
-        "directory": "C:\\Users\\union\\Documents\\HW-Everybot",
-        "file": "src\\main.cpp"
+        "directory": "C:\\Users\\PC\\Documents\\GitHub\\HW-Everybot\\HW-Everybot",
+        "file": "src\\autons.cpp"
     }
 ]
