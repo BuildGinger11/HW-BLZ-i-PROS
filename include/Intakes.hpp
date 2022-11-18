@@ -1,4 +1,4 @@
 #pragma once
 #include "api.h"
-void intakes (int power);
+void set_intake(int power);
 void Intake_Control(void*);

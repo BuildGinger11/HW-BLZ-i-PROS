@@ -35,10 +35,10 @@ Drive chassis(
     // External Gear Ratio (MUST BE DECIMAL)
     //    (or gear ratio of tracking wheel)
     // eg. if your drive is 84:36 where the 36t is powered, your RATIO would
-    // be 2.333. eg. if your drive is 36:60 where the 60t is powered, your RATIO
-    // would be 0.6.
+    // be 2.333. eg. if your drive is 36:60 where the 36t is powered, your RATIO
+    // would be 1.6666
     ,
-    2
+    1.6666
 
     // Uncomment if using tracking wheels
     /*
@@ -78,8 +78,10 @@ void initialize() {
   chassis.toggle_modify_curve_with_controller(true);  // Enables modifying the controller curve with buttons on the joysticks
   chassis.set_active_brake(0);                        // Sets the active brake kP. We recommend 0.1.
   chassis.set_curve_default(1, 0);                    // Defaults for curve. If using tank, only the first parameter is used. (Comment this line out if you have an SD card!)
-  default_constants();                                // Set the drive to your own constants from autons.cpp!
-  exit_condition_defaults();                          // Set the exit conditions to your own constants from autons.cpp!
+  //default_constants();                                // Set the drive to your own constants from autons.cpp!
+//  exit_condition_defaults();
+  set_indexer(IN);
+set_expansion(DOWN);                     // Set the exit conditions to your own constants from autons.cpp!
 
   // These are already defaulted to these buttons, but you can change the
   // left/right curve buttons here! chassis.set_left_curve_buttons
@@ -91,7 +93,14 @@ void initialize() {
   // runs task for auton
 
   // Autonomous Selector using LLEMU
-  ez::as::auton_selector.add_autons({});
+  ez::as::auton_selector.add_autons({
+
+  Auton("Han Solo ", Han_Solo),
+  Auton("speed_test two", speed_test2),
+  Auton("speed_test", speed_test),
+  Auton("help me ObiWan i need discs", help_me_ObiWan),
+  Auton(" Rogue one but not everyone dies! ", rogue_one),
+  });
 
   // Initialize chassis and auton selector
   chassis.initialize();
@@ -149,8 +158,8 @@ void autonomous() {
                                               // autonomous consistency.
 
   ez::as::auton_selector.call_selected_auton();  // Calls selected auton from autonomous selector.
-}
 
+}
 /**
  * Runs the operator control code. This function will be started in its own task
  * with the default priority and stack size whenever the robot is enabled via
@@ -171,11 +180,15 @@ void opcontrol() {
   // run subsystems
   pros::Task Intakes(Intake_Control);
   pros::Task Flywheel(Flywheel_Control);
-  pros::Task Indexer(Index_Control);
+  pros::Task TopIntakes(TopIntake_Control);
+  pros::Task Indexer(Indexer_Control);
+  pros::Task Expansion(Expansion_Control);
+//  pros::Task Slider(Slider_Control);
 
   bool is_tank = true;
 
   while (true) {
+
     // run drivebase
     if (master.get_digital_new_press(DIGITAL_X)) {
       is_tank = !is_tank;
