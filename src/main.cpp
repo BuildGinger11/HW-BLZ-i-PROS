@@ -174,6 +174,137 @@ void autonomous() {
  * task, not resume it from where it left off.
  */
 void opcontrol() {
+
+//chassis.set_drive_brake(MOTOR_BRAKE_HOLD);
+
+chassis.reset_pid_targets();
+//reset PID targets to 0
+chassis.reset_gyro();
+//reset gyro position to 0
+chassis.reset_drive_sensor();
+//reset drive sensors to 0
+
+chassis.set_drive_brake(MOTOR_BRAKE_HOLD);
+//set motors to hold. This helps autonomous consistancy
+
+//get match load
+set_indexer(OUT);
+flywheel(-69);
+set_topintake(-43);
+set_intake(-20);
+pros::delay(700);
+set_intake(0);
+set_topintake(40);
+set_indexer(IN);
+flywheel(69);
+set_intake(0);
+pros::delay(900);
+
+// back up and turn
+chassis.set_drive_pid(8, 80);
+chassis.wait_drive();
+
+chassis.set_turn_pid(-88.5, 70);
+chassis.wait_drive();
+
+// shoot 3 discs
+set_indexer(OUT);
+set_topintake(127);
+pros::delay(300);
+set_flywheel(74);
+set_intake(127);
+pros::delay(950);
+
+set_indexer(IN);
+set_intake(0);
+set_topintake(0);
+
+//get back to match load position
+//chassis.set_drive_pid(-0.9, 90);
+//chassis.wait_drive();
+
+chassis.set_turn_pid(-1, 80);
+chassis.wait_drive();
+
+flywheel(-60);
+chassis.set_drive_pid(-10.4, 70);
+
+//get match load
+set_indexer(OUT);
+pros::delay(300);
+set_topintake(-42);
+set_intake(-20);
+pros::delay(800);
+set_intake(0);
+pros::delay(1100);
+set_indexer(IN);
+flywheel(69);
+set_topintake(40);
+set_intake(0);
+pros::delay(900);
+
+// back up and turn
+chassis.set_drive_pid(8, 80);
+chassis.wait_drive();
+
+chassis.set_turn_pid(-88.5, 70);
+chassis.wait_drive();
+
+// shoot another 3 discs x1
+set_indexer(OUT);
+set_topintake(127);
+pros::delay(300);
+set_flywheel(72);
+set_intake(127);
+pros::delay(950);
+
+set_indexer(IN);
+set_intake(0);
+set_topintake(0);
+
+//get back to match load position
+chassis.set_turn_pid(-1, 80);
+chassis.wait_drive();
+
+flywheel(-60);
+chassis.set_drive_pid(-11, 70);
+
+//get match load
+set_indexer(OUT);
+pros::delay(300);
+flywheel(-63);
+set_topintake(-42);
+set_intake(-20);
+pros::delay(900);
+set_intake(0);
+pros::delay(1500);
+set_indexer(IN);
+flywheel(72);
+set_topintake(30);
+set_intake(0);
+pros::delay(900);
+
+// back up and turn
+chassis.set_drive_pid(8, 80);
+chassis.wait_drive();
+
+chassis.set_turn_pid(-88.5, 70);
+chassis.wait_drive();
+
+// shoot another 3 discs x2
+set_indexer(OUT);
+set_topintake(127);
+pros::delay(300);
+set_flywheel(72);
+set_intake(127);
+pros::delay(1520);
+
+set_indexer(IN);
+set_intake(0);
+set_topintake(0);
+
+
+
   // This is preference to what you like to drive on.
   chassis.set_drive_brake(MOTOR_BRAKE_COAST);
 

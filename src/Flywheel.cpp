@@ -3,7 +3,7 @@
 pros::Motor Flywheel(17, true); //no true
 pros::Motor Flywheel2(15); //true
 
-std::vector<int> speeds = {0, 85, 63}; // {0, 127, 115, 110, 95};
+std::vector<int> speeds = {0, 81, 63}; // {0, 127, 115, 110, 95};
 bool speed = false;
 
 void flywheel(int power) {
